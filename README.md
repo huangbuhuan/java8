@@ -5,8 +5,8 @@
 - [函数式编程](#函数式编程)
 - [Lambda表达式](#Lambda表达式)
 - [Stream流](#Stream流)
-- [高效Java 8编程](#高效Java 8编程)
-- [超越Java 8](#超越Java 8)
+- [高效Java 8编程](#高效Java8编程)
+- [超越Java 8](#超越Java8)
 - [其他](#其他)
 	* [Optional](#Optional) 
 	* [DateTime](#DateTime)	
@@ -25,8 +25,8 @@
 
 ## Stream流
 
-## 高效Java 8编程
-## 超越Java 8
+## 高效Java8编程
+## 超越Java8
 
 ##其他
 
