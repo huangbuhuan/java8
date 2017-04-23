@@ -1,6 +1,6 @@
 package me.buhuan.java8.stream;
 
-import me.buhuan.java8.UserUtils;
+import me.buhuan.java8.utils.UserUtils;
 import me.buhuan.java8.model.User;
 
 import java.util.Comparator;

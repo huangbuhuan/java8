@@ -1,4 +1,4 @@
-package me.buhuan.java8;
+package me.buhuan.java8.utils;
 
 import me.buhuan.java8.model.User;
 
