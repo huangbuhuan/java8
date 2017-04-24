@@ -58,7 +58,7 @@
 |UnaryOperator\<T>|T|T|逻辑非(!)|
 |BinaryOperator\<T>|(T, T)|T|求两个数的乘积(*)|
 
-
+<a name="Stream流"></a>
 ## Stream流
 
 ![UML关系图](./img/WX20170422-014241@2x.png)
@@ -98,10 +98,14 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 ### flatMap方法
 ### max和min方法
 ### reduce方法
+
+<a name="高效Java8编程"></a>
 ## 高效Java8编程
 
+<a name="超越Java8"></a>
 ## 超越Java8
 
+<a name="其他"></a>
 ## 其他
 
 ### Optional
@@ -109,6 +113,7 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 
 ### DateTime
 
+<a name="参考链接"></a>
 ## 参考链接
 
 
