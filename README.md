@@ -56,12 +56,6 @@
 |UnaryOperator\<T>|T|T|逻辑非(!)|
 |BinaryOperator\<T>|(T, T)|T|求两个数的乘积(*)|
 
-* Predicate\<T>
-* Function\<T>
-* Supplier\<T>
-* Consumer\<T>
-* BinaryOperator/<T>
-
 
 ## Stream流
 
@@ -109,6 +103,7 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 ## 其他
 
 ### Optional
+
 
 ### DateTime
 

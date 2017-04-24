@@ -26,7 +26,7 @@ public interface UserUtils {
     }
 
     static void println(List<User> users) {
-        users.forEach(user -> System.out.println(user.getName()));
+        users.forEach(user -> System.out.println(user.getName() + ":" + user.getAge()));
     }
 
     static void println(User user) {
