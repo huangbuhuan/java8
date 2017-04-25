@@ -12,6 +12,12 @@ Java 8 入门指南，使用Java 8的API写的一些小例子，是。
 - [函数式编程](#函数式编程)
 - [Lambda表达式](#Lambda表达式)
 - [Stream流](#Stream流)
+	* [collect方法](#collect方法)
+	* [filter方法](#filter方法)
+	* [map方法](#map方法)
+	* [flatMap方法](#flatMap方法)
+	* [max和min方法](#max和min方法)
+	* [reduce方法](#reduce方法)
 - [高效Java 8编程](#高效Java8编程)
 - [超越Java 8](#超越Java8)
 - [其他](#其他)
@@ -38,7 +44,7 @@ Java 8 入门指南，使用Java 8的API写的一些小例子，是。
 
 ### 函数式接口
 
- 函数式接口就是仅仅声明了一个抽象方法的接口，不过函数式接口可以包含默认方法和静态方法。如下：
+函数式接口就是仅仅声明了一个抽象方法的接口，不过函数式接口可以包含默认方法和静态方法。如下：
 	
 	@FunctionalInterface
 	public interface FunctionInterfaceDemo {
@@ -99,11 +105,17 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 输出：
 ![](./img/WX20170423-004514@2x.png)
 结论：只有在需要的时候进行计算可以更好的提示效率
+<a name="collect方法"></a>
 ### collect方法
+<a name="filter方法"></a>
 ### filter方法
+<a name="map方法"></a>
 ### map方法
+<a name="flatMap方法"></a>
 ### flatMap方法
+<a name="max和min方法"></a>
 ### max和min方法
+<a name="reduce方法"></a>
 ### reduce方法
 
 <a name="高效Java8编程"></a>
@@ -131,3 +143,4 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 4. [《Java8实战》](https://book.douban.com/subject/25912747/)
 5. [《Java8函数式编程》](https://book.douban.com/subject/26346017/)
 6. [《写给大忙人看的Java SE 8》](https://book.douban.com/subject/26274206/comments/hot?p=1)
+
