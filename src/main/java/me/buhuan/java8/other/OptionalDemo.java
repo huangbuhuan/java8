@@ -3,7 +3,6 @@ package me.buhuan.java8.other;
 import me.buhuan.java8.model.User;
 
 import java.util.Optional;
-import java.util.logging.Logger;
 
 /**
  * @author hbh

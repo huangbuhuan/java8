@@ -1,4 +1,11 @@
-# Java 8指南
+## Java 8指南
+
+Java 8 入门指南，使用Java 8的API写的一些小例子，是。
+
+![](https://img.shields.io/wercker/ci/wercker/docs.svg)
+![](https://img.shields.io/badge/java%20support-8-green.svg)
+![](https://img.shields.io/badge/coverage-60%25-green.svg)
+![](https://img.shields.io/david/strongloop/express.svg)
 
 ## 目录:
 
@@ -31,7 +38,7 @@
 
 ### 函数式接口
 
-函数式接口就是仅仅声明了一个抽象方法的接口，不过函数式接口可以包含默认方法和静态方法。如下：
+ 函数式接口就是仅仅声明了一个抽象方法的接口，不过函数式接口可以包含默认方法和静态方法。如下：
 	
 	@FunctionalInterface
 	public interface FunctionInterfaceDemo {

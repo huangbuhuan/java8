@@ -3,10 +3,8 @@ package me.buhuan.java8.stream;
 import me.buhuan.java8.model.User;
 import me.buhuan.java8.utils.UserUtils;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.*;

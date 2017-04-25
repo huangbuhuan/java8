@@ -1,7 +1,5 @@
 package me.buhuan.java8.model;
 
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * @author hbh

@@ -1,8 +1,5 @@
 package me.buhuan.java8.stream;
 
-import me.buhuan.java8.model.User;
-import me.buhuan.java8.utils.UserUtils;
-
 import java.util.stream.Stream;
 
 /**
