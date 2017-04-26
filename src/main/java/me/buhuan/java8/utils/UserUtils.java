@@ -11,9 +11,9 @@ import java.util.stream.Stream;
  * @version 1.0.0
  * @since 2017/4/23上午2:41
  */
-public interface UserUtils {
+public class UserUtils {
 
-    static List<User> getDefaultUserList() {
+    public static List<User> getDefaultUserList() {
         return Arrays.asList(
                 User.of("小智", 18, "浙江"),
                 User.of("小霞", 20, "上海"),
@@ -21,15 +21,15 @@ public interface UserUtils {
         );
     }
 
-    static Stream<User> getUserStream() {
+    public static Stream<User> getUserStream() {
         return getDefaultUserList().stream();
     }
 
-    static void println(List<User> users) {
+    public static void println(List<User> users) {
         users.forEach(user -> System.out.println(user.getName() + ":" + user.getAge()));
     }
 
-    static void println(User user) {
+    public static void println(User user) {
         System.out.println(user.getName());
     }
 

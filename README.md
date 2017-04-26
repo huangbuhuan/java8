@@ -18,6 +18,7 @@ Java 8 入门指南，使用Java 8的API写的一些小例子，是。
 	* [flatMap方法](#flatMap方法)
 	* [max和min方法](#max和min方法)
 	* [reduce方法](#reduce方法)
+	* [其他方法](#其他方法)
 - [高效Java 8编程](#高效Java8编程)
 - [超越Java 8](#超越Java8)
 - [其他](#其他)
@@ -76,9 +77,13 @@ Java 8 入门指南，使用Java 8的API写的一些小例子，是。
 
 ![UML关系图](./img/WX20170422-014241@2x.png)
 
-Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCloseable接口。
-
-
+Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCloseable接口。它只能被消费一次，如果想要继续使用，需要重新创建一个流。如下会抛出异常。
+	
+	List<String> strs = Arrays.asList("A", "B", "C");
+	Stream<String> s = strs.stream();
+	s.forEach(System.out::println);
+	s.forEach(System.out::println);
+	
 ### 内部迭代实现机制
 外部迭代:首先调用Iterator方法，产生一个新的Iterator对象，进行控制迭代过程。
 
@@ -114,9 +119,15 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 <a name="flatMap方法"></a>
 ### flatMap方法
 <a name="max和min方法"></a>
-### max和min方法
-<a name="reduce方法"></a>
 ### reduce方法
+<a name="其他方法"></a>
+### 其他方法
+* skip：跳过指定个数的流。
+* limit：返回不超过给定长度的流。
+* max：找到最大的元素
+* min：找到最小的元素
+* findFirst：找到第一个匹配元素
+* anyMatch：是否存在一个匹配元素
 
 <a name="高效Java8编程"></a>
 ## 高效Java8编程
