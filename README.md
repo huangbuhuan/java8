@@ -1,6 +1,6 @@
 ## Java 8指南
 
-Java 8 入门指南，使用Java 8的API写的一些小例子，是。
+用来记录Java 8学习，以及API的使用。
 
 ![](https://img.shields.io/wercker/ci/wercker/docs.svg)
 ![](https://img.shields.io/badge/java%20support-8-green.svg)
@@ -127,7 +127,12 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 * max：找到最大的元素
 * min：找到最小的元素
 * findFirst：找到第一个匹配元素
+* findAny：获取任意一个元素
 * anyMatch：是否存在一个匹配元素
+* noneMatch：是否全部不匹配
+* allMatch：是否全部匹配
+* sorted：排序
+* distinct：去重
 
 <a name="高效Java8编程"></a>
 ## 高效Java8编程
