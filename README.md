@@ -1,6 +1,6 @@
-## Java 8指南
+## Java 8入门
 
-用来记录Java 8学习，以及API的使用。
+用来记录Java 8学习，以及常用API的使用。
 
 ![](https://img.shields.io/wercker/ci/wercker/docs.svg)
 ![](https://img.shields.io/badge/java%20support-8-green.svg)
@@ -28,7 +28,13 @@
 
 <a name="函数式编程"></a>
 ## 函数式编程
+函数式编程是一种编程范式，它的主要思想是把函数过程尽量写成一系列嵌套的函数调用。具有以下几个特点
 
+* 函数是一等公民:函数和其他数据类型一样，可以赋值给其他变量，也可以作为参数，传递给另外一个函数，或者作为返回值返回。
+
+* 没有副作用，不修改状态。
+
+* 强调将计算过程分解成可复用的函数。
 <a name="Lambda表达式"></a>
 ## Lambda表达式
 
@@ -63,6 +69,8 @@
 
 ### Java 8中重要的函数式接口
 
+下面是Java 8中一些常用的函数式接口。
+
 |接口名|参数|返回类型|示例|
 |:--|:--|:--|:--|
 |Predicate\<T>|\<T>|boolean|判断是否|
@@ -88,7 +96,7 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 外部迭代:首先调用Iterator方法，产生一个新的Iterator对象，进行控制迭代过程。
 
 内部迭代:首先调用stream方法，它的作用和iterator()方法一样，不过它返回的是内部迭代中相应的接口Stream。这样做的好处就是在迭代时要进行多次操作时可以不用多次循环，只需要迭代一次就好了。
-像filter这种不产生新集合的方法叫做惰性求值方法，像count这样最终会从Stream产生值的方法叫作及早求值方法。
+像filter这种不产生新集合的方法叫做[惰性求值](https://zh.wikipedia.org/wiki/%E6%83%B0%E6%80%A7%E6%B1%82%E5%80%BC)方法，像count这样最终会从Stream产生值的方法叫作及早求值方法。
 
 例子：
 
@@ -112,14 +120,57 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 结论：只有在需要的时候进行计算可以更好的提示效率
 <a name="collect方法"></a>
 ### collect方法
+将Stream流转换为一个集合
+	
+	#输入
+	Stream<String> stream = Stream.of("a", "b", "c");
+	List<String> strs = stream.collect(Collectors.toList());
+	strs.forEach(System.out::println);
+	#输出
+	a
+	b
+	c
+	
 <a name="filter方法"></a>
 ### filter方法
+过滤掉流中不符合条件的元素
+	
+	#输入
+	Stream<Integer> nums = Stream.of(18, 19 ,20);
+	nums.filter(num -> num > 18).forEach(System.out::println);
+	
+	#输出
+	c
 <a name="map方法"></a>
 ### map方法
+将流中的元素转换为另外一个元素。
+
+	#输入
+	Stream<Integer> nums = Stream.of(18, 19 ,20);
+	map(num -> num + 100).forEach(System.out::println);
+	
+	#输出
+	118
+	119
+	120
 <a name="flatMap方法"></a>
 ### flatMap方法
-<a name="max和min方法"></a>
+将底层的元素全部抽出来放到一起，如下将List中的元素全部抽取出来，流中只包含Integer元素。
+
+	List<Integer> nums1 = Arrays.asList(1, 2, 3);
+	List<Integer> nums2 = Arrays.asList(4, 6);
+	Stream.of(nums1, nums2).flatMap(num -> num.stream()).forEach(System.out::println);
+<a name="reduce"></a>
 ### reduce方法
+将Stream流中的数据聚合成一个数据
+![](https://segmentfault.com/img/bVGyNp?w=1216&h=867)
+	#输入
+	int ages = Stream.of(1, 2, 34).reduce(0, (a, b) -> a + b);
+	System.out.println(ages);
+	
+	#输出
+	37
+	
 <a name="其他方法"></a>
 ### 其他方法
 * skip：跳过指定个数的流。
@@ -148,15 +199,23 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 
 ### DateTime
 
+### 数组
+	
+	String[] strs = {"A", "B", "C"};
+	
+	String[] strs = new String[]{"A", "B", "C"};
 <a name="参考链接"></a>
 ## 参考链接
 
 
 
-1. [Java 8开发的4大顶级技巧](http://www.importnew.com/22417.html)
-2. [Java 8 Optional: How to Use it](http://blog.jhades.org/java-8-how-to-use-optional/)
-3. [Java8学习资料汇总](http://ifeve.com/java8-learning-resources/)
-4. [《Java8实战》](https://book.douban.com/subject/25912747/)
-5. [《Java8函数式编程》](https://book.douban.com/subject/26346017/)
-6. [《写给大忙人看的Java SE 8》](https://book.douban.com/subject/26274206/comments/hot?p=1)
+1. [函数式编程入门教程](http://www.ruanyifeng.com/blog/2017/02/fp-tutorial.html7)
+2. [Java 8开发的4大顶级技巧](http://www.importnew.com/22417.html)
+3. [Java 8 Optional: How to Use it](http://blog.jhades.org/java-8-how-to-use-optional/)
+4. [Java 8学习资料汇总](http://ifeve.com/java8-learning-resources/)
+5. [Java 8中Stream详解](https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/)
+6. [Java 8 API在线版地址](http://docs.oracle.com/javase/8/docs/api/index.html)
+7. [《Java8实战》](https://book.douban.com/subject/25912747/)
+8. [《Java8函数式编程》](https://book.douban.com/subject/26346017/)
+9. [《写给大忙人看的Java SE 8》](https://book.douban.com/subject/26274206/comments/hot?p=1)
 

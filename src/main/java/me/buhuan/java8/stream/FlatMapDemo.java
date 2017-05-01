@@ -22,6 +22,10 @@ public class FlatMapDemo {
                                     .flatMap(users -> users.stream())
                                     .collect(Collectors.toList());
         userList.forEach(user -> System.out.println(user.getAge()));
+
+        List<Integer> nums1 = Arrays.asList(1, 2, 3);
+        List<Integer> nums2 = Arrays.asList(4, 6);
+        Stream.of(nums1, nums2).flatMap(num -> num.stream()).forEach(System.out::println);
     }
 
 }
