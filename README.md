@@ -11,6 +11,8 @@
 
 - [函数式编程](#函数式编程)
 - [Lambda表达式](#Lambda表达式)
+	* [函数式接口](#函数式接口)
+	* [Java 8中重要的函数式接口](#Java8中重要的函数式接口)
 - [Stream流](#Stream流)
 	* [collect方法](#collect方法)
 	* [filter方法](#filter方法)
@@ -36,6 +38,7 @@
 
 * 强调将计算过程分解成可复用的函数。
 <a name="Lambda表达式"></a>
+
 ## Lambda表达式
 
 >Lambda表达式没有名字，当它有参数列表、函数主体、返回类型，可能还有一个可以抛出的异常列表。
@@ -49,6 +52,7 @@
 |组合两个值|(int a, int b) -> a * b|
 |比较两个对象|(User a1, User a2)|
 
+<a name="函数式接口"></a>
 ### 函数式接口
 
 函数式接口就是仅仅声明了一个抽象方法的接口，不过函数式接口可以包含默认方法和静态方法。如下：
@@ -67,7 +71,8 @@
 	    }
 	}
 
-### Java 8中重要的函数式接口
+<a name="Java8中重要的函数式接口"></a>
+### Java8中重要的函数式接口
 
 下面是Java 8中一些常用的函数式接口。
 
@@ -195,7 +200,22 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 ## 其他
 
 ### Optional
-
+Optional是为了减少NullPointException，增加代码的可读性。Optional是一个final类型的类
+	
+	Optional<User> optUser = Optional.of(user);
+	
+* empty：返回一个空的Optional实例。
+* filter：如果满足提交返回Optional对象，否则返回一个空的Optional对象。
+* flatMap：如果值存在，就使用mapping函数调用，返回一个Optional对象，否则返回一个空对象。
+* get：如果值存在返回用Optional封装返回，否则抛出NoSuchElementException异常
+* ifPresent：如果值存在，就返回该方法的调用，否则什么也不做。
+* isPresent：如果值存在，就返回true，否则返回false。
+* map：如果值存在，就执行提供的mapping函数调用。
+* of：如果值不存在就抛出异常，否则返回一个Optional封装的对象。
+* ofNullable：如果值为空就返回一个空的Optional对象，否则调用of方法。
+* orElse：如果值存在就返回该值，否则返回默认值。
+* orElseGet：如果值存在就返回该值，否则返回一个函数接口生成的值。
+* orElseThrow：如果值存在就返回该值，否则抛出一个接口生成的异常。
 
 ### DateTime
 
