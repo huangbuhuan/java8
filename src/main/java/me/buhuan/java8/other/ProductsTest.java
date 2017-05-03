@@ -7,9 +7,8 @@ package me.buhuan.java8.other;
  */
 public class ProductsTest {
 
-    @Products(value = {
-        @Product(value = "a"), @Product(value = "b")
-    })
+    @Product(value = "a")
+    @Product(value = "b")
     public void test() {
 
     }
