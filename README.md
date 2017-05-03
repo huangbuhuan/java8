@@ -124,6 +124,9 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 ![](./img/WX20170423-004514@2x.png)
 结论：只有在需要的时候进行计算可以更好的提示效率
 <a name="collect方法"></a>
+
+## 常用的方法
+
 ### collect方法
 将Stream流转换为一个集合
 	
@@ -219,6 +222,63 @@ Optional是为了减少NullPointException，增加代码的可读性。Optional�
 
 ### DateTime
 
+在Java 8 以前需要使用Date和SimpdateFormatter操作时间，而且都不是线程安全的，Date不仅包含日期还包含时间和毫秒数，使用起来非常的困难，而Java 8把日期分成了LocalDate和LocalTime，还有LocalDateTime。
+
+使用LocalDate操作日期
+
+	// 获取当前日期
+    LocalDate now = LocalDate.now();
+
+    // 用静态方法创建日期
+    LocalDate date = LocalDate.of(2017, 5, 1);
+
+    // 将String类型转换为日期类型.注：02不能写成2，否则会抛出DateTimeParseException
+    LocalDate endOfFeb = LocalDate.parse("2017-02-28");
+
+    // 获取这个月的第一天的日期
+    now.with(TemporalAdjusters.firstDayOfMonth())
+
+    // 获取这个月的最后一天
+    now.with(TemporalAdjusters.lastDayOfMonth())
+
+使用LocalTime操作时间
+
+	// 获取当前时间
+    LocalTime now = LocalTime.now();
+
+    // 舍弃纳秒
+    now.withNano(0);
+    
+    /*
+     * 获取特定的时间
+     * Localtime.MIN 00:00
+     * Localtime.MIDNIGHT 00:00
+     * Localtime.NOON 12:00
+     * LocalTime.MAX 23:59:59.999999999
+     */
+    now.with(LocalTime.MIN);
+    now.with(LocalTime.MIDNIGHT);
+    now.with(LocalTime.NOON);
+    now.with(LocalTime.MAX);
+    
+    // of可以传入四个参数
+    LocalTime zero = LocalTime.of(23, 59, 59, 999_999_999);
+    
+    // parse方法可以转换的格式有 HH:mm:ss.nnnnnnnnn HH:mm:ss HH:mm
+    LocalTime last = LocalTime.parse("23:59:59.999999999");
+    
+    // 也可以自定义转换格式
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+    LocalTime start = LocalTime.parse("00:00:00", formatter);
+
+JDBC映射和新类型关联
+
+	date -> LocalDate
+	time -> LocalTime
+	timestamp -> LocalDateTime
+
+### 重复注解
+
 ### 数组
 	
 	String[] strs = {"A", "B", "C"};
@@ -232,10 +292,12 @@ Optional是为了减少NullPointException，增加代码的可读性。Optional�
 1. [函数式编程入门教程](http://www.ruanyifeng.com/blog/2017/02/fp-tutorial.html7)
 2. [Java 8开发的4大顶级技巧](http://www.importnew.com/22417.html)
 3. [Java 8 Optional: How to Use it](http://blog.jhades.org/java-8-how-to-use-optional/)
-4. [Java 8学习资料汇总](http://ifeve.com/java8-learning-resources/)
-5. [Java 8中Stream详解](https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/)
-6. [Java 8 API在线版地址](http://docs.oracle.com/javase/8/docs/api/index.html)
-7. [《Java8实战》](https://book.douban.com/subject/25912747/)
-8. [《Java8函数式编程》](https://book.douban.com/subject/26346017/)
-9. [《写给大忙人看的Java SE 8》](https://book.douban.com/subject/26274206/comments/hot?p=1)
+4. [Java 8 时间日期库的20个使用示例](http://www.codeceo.com/article/java-8-20-datetime.html)
+5. [如何在Java 8中愉快地处理日期和时间](http://www.liaoxuefeng.com/article/00141939241051502ada88137694b62bfe844cd79e12c32000)
+5. [Java 8学习资料汇总](http://ifeve.com/java8-learning-resources/)
+6. [Java 8中Stream详解](https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/)
+7. [Java 8 API在线版地址](http://docs.oracle.com/javase/8/docs/api/index.html)
+8. [《Java8实战》](https://book.douban.com/subject/25912747/)
+9. [《Java8函数式编程》](https://book.douban.com/subject/26346017/)
+10. [《写给大忙人看的Java SE 8》](https://book.douban.com/subject/26274206/comments/hot?p=1)
 
