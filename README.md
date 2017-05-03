@@ -182,11 +182,11 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 
 <a name="创建无限流"></a>
 ### 创建无限流
-Stream的API提供了两个静态方法创建无限流：iterate和generate。由两个静态方法创建的流会根据给定的函数按需创建流一般会使用limit限制流的大小。
+Stream的API提供了两个静态方法创建无限流：iterate和generate。由两个静态方法创建的流会根据给定的函数按需创建流一般会使用limit限制流的大小。iterate方法会对每个新生成的值都调用函数,generate方法不会对每个新生成的值应用函数.
 	
-	// 使用iterate方法创建无限流，iterate方法会对每个新生成的值都调用函数
+	// 从0开始，生成10个偶数。
 	Stream.iterate(0, n -> n + 2).limit(10).forEach(System.out::println);
-	// 使用generate方法创建无限流，generate方法不会对每个新生成的值应用函数
+	// 生成10个随机数。
 	Stream.generate(Math::random). limit(10).forEach(System.out::println);
 
 <a name="其他方法"></a>
