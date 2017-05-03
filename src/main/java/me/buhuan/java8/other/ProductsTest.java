@@ -12,4 +12,11 @@ public class ProductsTest {
     public void test() {
 
     }
+
+    public static void main(String[] args) throws NoSuchMethodException {
+        Product[] products = ProductsTest.class.getMethod("test").getAnnotationsByType(Product.class);
+        for (Product product : products) {
+            System.out.println(product.value());
+        }
+    }
 }
