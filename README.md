@@ -20,9 +20,9 @@
 	* [flatMap方法](#flatMap方法)
 	* [max和min方法](#max和min方法)
 	* [reduce方法](#reduce方法)
+	* [创建无限流](#创建无限流)
 	* [其他方法](#其他方法)
 - [高效Java 8编程](#高效Java8编程)
-- [超越Java 8](#超越Java8)
 - [其他](#其他)
 	* [Optional](#Optional) 
 	* [DateTime](#DateTime)	
@@ -179,7 +179,16 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 	
 	#输出
 	37
+
+<a name="创建无限流"></a>
+### 创建无限流
+Stream的API提供了两个静态方法创建无限流：iterate和generate。由两个静态方法创建的流会根据给定的函数按需创建流一般会使用limit限制流的大小。
 	
+	// 使用iterate方法创建无限流，iterate方法会对每个新生成的值都调用函数
+	Stream.iterate(0, n -> n + 2).limit(10).forEach(System.out::println);
+	// 使用generate方法创建无限流，generate方法不会对每个新生成的值应用函数
+	Stream.generate(Math::random). limit(10).forEach(System.out::println);
+
 <a name="其他方法"></a>
 ### 其他方法
 * skip：跳过指定个数的流。
@@ -197,10 +206,7 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 <a name="高效Java8编程"></a>
 ## 高效Java8编程
 
-<a name="超越Java8"></a>
-## 超越Java8
 
-<a name="其他"></a>
 ## 其他
 
 ### Optional
