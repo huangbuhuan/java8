@@ -172,6 +172,7 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 ### reduce方法
 将Stream流中的数据聚合成一个数据
 ![](https://segmentfault.com/img/bVGyNp?w=1216&h=867)
+
 	#输入
 	int ages = Stream.of(1, 2, 34).reduce(0, (a, b) -> a + b);
 	System.out.println(ages);
@@ -277,16 +278,11 @@ JDBC映射和新类型关联
 	time -> LocalTime
 	timestamp -> LocalDateTime
 
-### 重复注解
+## 代码地址	
+[https://github.com/huangbuhuan/java8](https://github.com/huangbuhuan/java8)
 
-### 数组
-	
-	String[] strs = {"A", "B", "C"};
-	
-	String[] strs = new String[]{"A", "B", "C"};
 <a name="参考链接"></a>
 ## 参考链接
-
 
 
 1. [函数式编程入门教程](http://www.ruanyifeng.com/blog/2017/02/fp-tutorial.html7)
