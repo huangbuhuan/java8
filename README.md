@@ -79,7 +79,7 @@
 |接口名|参数|返回类型|示例|
 |:--|:--|:--|:--|
 |Predicate\<T>|\<T>|boolean|判断是否|
-|Concumer\<T>|\<T>|void|输出一个值|
+|Consumer\<T>|\<T>|void|输出一个值|
 |Function\<T>|\<T>|R|获得Artist对象的名字|
 |Supplier\<T>|None|T|工厂方法|
 |UnaryOperator\<T>|T|T|逻辑非(!)|
