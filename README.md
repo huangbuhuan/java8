@@ -1,4 +1,4 @@
-## Java 8入门
+## 高效Java 8编程
 
 用来记录Java 8学习，以及常用API的使用。
 
@@ -48,7 +48,7 @@
 |布尔表达式|(List<String> list) -> list.isEmpty()|
 |创建对象|() -> new User()|
 |消费一个对象|(User user) -> {System.out.println(user.getName;)}|
-|从一个对象中选择/抽取|(String s) -> s.langth()|
+|从一个对象中选择/抽取|(String s) -> s.length()|
 |组合两个值|(int a, int b) -> a * b|
 |比较两个对象|(User a1, User a2)|
 
@@ -84,6 +84,15 @@
 |Supplier\<T>|None|T|工厂方法|
 |UnaryOperator\<T>|T|T|逻辑非(!)|
 |BinaryOperator\<T>|(T, T)|T|求两个数的乘积(*)|
+
+简单的使用例子：
+
+	Predicate<Integer> predicate = x -> x == 1;
+	Consumer<Integer> consumer = x -> System.out.println(x);
+	Function<Integer, Integer> function = x -> x = x + 1;
+	Supplier<Integer> supplier = () -> 1;
+	UnaryOperator<Integer> unaryOperator = x -> x + 1;
+	BinaryOperator<Integer> binaryOperator = (x, y) -> x * y;
 
 <a name="Stream流"></a>
 ## Stream流
