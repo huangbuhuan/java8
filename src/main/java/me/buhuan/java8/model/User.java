@@ -7,6 +7,7 @@ package me.buhuan.java8.model;
  * @since 2017/4/22上午1:27
  */
 public class User {
+
     private String name;
     private Integer age;
     private String address;
