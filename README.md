@@ -180,7 +180,8 @@ Stream是一个借口继承了BaseStream接口，BaseStream接口继承了AutoCl
 <a name="reduce"></a>
 ### reduce方法
 将Stream流中的数据聚合成一个数据
-![](https://segmentfault.com/img/bVGyNp?w=1216&h=867)
+![图片来源](https://segmentfault.com/img/bVGyNp?w=1216&h=867)
+
 
 	#输入
 	int ages = Stream.of(1, 2, 34).reduce(0, (a, b) -> a + b);
