@@ -15,7 +15,9 @@ public class MapDemo {
 
     public static void main(String[] args) {
         List<User> users = UserUtils.getDefaultUserList();
-        List<Integer> ages = users.stream().map(User::getAge).collect(Collectors.toList());
+        List<Integer> ages = users.stream()
+                                  .map(User::getAge)
+                                  .collect(Collectors.toList());
         ages.forEach(age -> System.out.println(age));
     }
 

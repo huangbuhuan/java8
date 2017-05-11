@@ -10,9 +10,9 @@ import java.util.stream.Stream;
 public class GenerateDemo {
 
     public static void main(String[] args) {
-        // 使用iterate方法创建无限流
+        // 使用iterate方法创建无限流， 有关联关系
         Stream.iterate(0, n -> n + 2).limit(10).forEach(System.out::println);
-        // 使用generate方法创建无限流
+        // 使用generate方法创建无限流, 无关联关系
         Stream.generate(Math::random).limit(10).forEach(System.out::println);
     }
 

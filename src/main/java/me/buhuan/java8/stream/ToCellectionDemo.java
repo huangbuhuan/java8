@@ -21,11 +21,16 @@ public class ToCellectionDemo {
         Map<Boolean, List<User>> userMap = UserUtils.getUserStream()
                                                     .collect(partitioningBy(user -> user.getAge() > 0));
         // 数据分组和SQL中的group by 类似
-        Map<String, List<User>> userList = UserUtils.getUserStream().collect(groupingBy(user -> user.getName()));
+        Map<String, List<User>> userList = UserUtils.getUserStream()
+                                                    .collect(groupingBy(user -> user.getName()));
 
         // joining操作字符串, 第一个参数表示以什么分隔，第二个参数表示以什么开始，第三个参数表示以什么结尾。
-        String result = UserUtils.getUserStream().map(User::getName).collect(Collectors.joining(","));
-        String result2 = UserUtils.getUserStream().map(User::getName).collect(Collectors.joining(",", "(", ")"));
+        String result = UserUtils.getUserStream()
+                                 .map(User::getName)
+                                 .collect(Collectors.joining(","));
+        String result2 = UserUtils.getUserStream()
+                                  .map(User::getName)
+                                  .collect(Collectors.joining(",", "(", ")"));
         System.out.println(result + "\n" + result2);
 
         // 生成一对多的关系
