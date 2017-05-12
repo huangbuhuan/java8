@@ -15,6 +15,7 @@ public interface FunctionInterface {
     }
 
     default void play() {
-
+        System.out.println("play");
     }
+
 }

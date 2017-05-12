@@ -12,6 +12,7 @@ public class ReduceDemo {
     public static void main(String[] args) {
         int ages = Stream.of(1, 2, 34).reduce(0, (a, b) -> a + b);
         System.out.println(ages);
+        System.out.println(Stream.of(1, 2, 34).reduce((a, b) -> a + b).get());
     }
 
 }

@@ -10,6 +10,7 @@ import java.time.temporal.TemporalAdjusters;
  * @since 2017/5/3下午6:34
  */
 public class LocalDateDemo {
+
     public static void main(String[] args) {
         // 获取当前日期
         LocalDate now = LocalDate.now();
@@ -29,4 +30,5 @@ public class LocalDateDemo {
         // 获取这个月的最后一天
         System.out.println(now.with(TemporalAdjusters.lastDayOfMonth()));
     }
+
 }
