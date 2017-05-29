@@ -4,7 +4,6 @@
 
 ![](https://img.shields.io/wercker/ci/wercker/docs.svg)
 ![](https://img.shields.io/badge/java%20support-8-green.svg)
-![](https://img.shields.io/badge/coverage-60%25-green.svg)
 ![](https://img.shields.io/david/strongloop/express.svg)
 
 ## 目录:
